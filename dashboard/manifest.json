@@ -1,0 +1,9 @@
+{
+  "name": "hermes-latex",
+  "label": "LaTeX 论文工坊",
+  "description": "单人全栈 AI LaTeX 工作台：模板初始化、零TeX环境编译、SyncTeX双向定位、BibTeX管家与投稿体检。",
+  "icon": "FileText",
+  "version": "0.1.0",
+  "tab": { "hidden": true },
+  "api": "plugin_api.py"
+}
