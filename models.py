@@ -1,4 +1,4 @@
-"""Typed Pydantic schemas for hermes-latex projects, diagnostics, SyncTeX, BibTeX, and checks."""
+"""Typed Pydantic schemas for forx-latex projects, diagnostics, SyncTeX, BibTeX, and checks."""
 from __future__ import annotations
 
 from typing import Any, Literal, Optional

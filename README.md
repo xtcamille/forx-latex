@@ -1,4 +1,4 @@
-# hermes-latex — 单人全栈 AI LaTeX 论文创作插件
+# forx-latex — 单人全栈 AI LaTeX 论文创作插件
 
 独立外部插件，融合云端平台开箱编译/模板能力、本地 IDE 语义工程能力与 AI 原生科研写作闭环（不含多人实时协同）。
 
@@ -21,9 +21,9 @@
 目录条目合并后，所有 ForX / Hermes 用户可直接安装：
 
 ```powershell
-forx plugins install hermes-latex
+forx plugins install forx-latex
 # 或通用 Hermes：
-hermes plugins install hermes-latex
+hermes plugins install forx-latex
 ```
 
 ### 方式二：手动安装
@@ -31,8 +31,8 @@ hermes plugins install hermes-latex
 将本仓库克隆到用户插件目录并启用（Windows ForX 默认目录为 `%LOCALAPPDATA%\forx\plugins\`，通用 Hermes 为 `~/.hermes/plugins/`）：
 
 ```powershell
-git clone https://github.com/xtcamille/hermes-latex "$env:LOCALAPPDATA\forx\plugins\hermes-latex"
-hermes plugins enable hermes-latex
+git clone https://github.com/xtcamille/forx-latex "$env:LOCALAPPDATA\forx\plugins\forx-latex"
+hermes plugins enable forx-latex
 ```
 
 如果本机尚未安装任何 TeX 发行版，执行以下命令一键安装轻量编译器 Tectonic：

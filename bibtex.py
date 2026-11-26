@@ -214,7 +214,7 @@ def fetch_bibtex_by_doi(doi: str, *, timeout: float = 12.0) -> BibEntry:
     if not clean_doi or "/" not in clean_doi:
         raise ValueError(f"无效 DOI: {doi!r}")
 
-    headers = {"Accept": "application/x-bibtex; charset=utf-8", "User-Agent": "hermes-latex/0.1"}
+    headers = {"Accept": "application/x-bibtex; charset=utf-8", "User-Agent": "forx-latex/0.1"}
     resp = httpx.get(f"https://doi.org/{clean_doi}", headers=headers, follow_redirects=True, timeout=timeout)
     resp.raise_for_status()
     parsed = parse_bib(resp.text)
@@ -271,7 +271,7 @@ def search_crossref(query: str, *, limit: int = 5, timeout: float = 12.0) -> lis
     resp = httpx.get(
         "https://api.crossref.org/works",
         params={"query": query, "rows": max(1, min(limit, 15))},
-        headers={"User-Agent": "hermes-latex/0.1 (mailto:noreply@example.org)"},
+        headers={"User-Agent": "forx-latex/0.1 (mailto:noreply@example.org)"},
         timeout=timeout,
     )
     resp.raise_for_status()

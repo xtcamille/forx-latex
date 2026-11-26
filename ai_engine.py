@@ -40,7 +40,7 @@ def get_llm(client: Any = None):
     if client is not None:
         return client
     from agent.plugin_llm import PluginLlm
-    return PluginLlm(plugin_id="hermes-latex")
+    return PluginLlm(plugin_id="forx-latex")
 
 
 def csv_to_booktabs(raw_csv: str, *, caption: str = "Experimental Results", label: str = "tab:results", highlight_best: str = "none") -> str:
@@ -194,7 +194,7 @@ async def heal_compile_errors(
         ),
         input=[{"type": "text", "text": json.dumps(payload, ensure_ascii=False)}],
         json_schema=HealPlan.model_json_schema(),
-        schema_name="hermes_latex_heal",
+        schema_name="forx_latex_heal",
         temperature=0,
         max_tokens=4000,
         purpose="latex.heal",
@@ -411,7 +411,7 @@ async def converse_paper_project(
             instructions=instructions,
             input=[{"type": "text", "text": json.dumps(payload, ensure_ascii=False)}],
             json_schema=ProjectChatPlan.model_json_schema(),
-            schema_name="hermes_latex_project_chat",
+            schema_name="forx_latex_project_chat",
             temperature=0.1,
             max_tokens=5000,
             purpose="latex.project.chat",

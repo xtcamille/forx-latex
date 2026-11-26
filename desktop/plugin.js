@@ -18,7 +18,7 @@ import {
 } from '@hermes/plugin-sdk'
 import { createElement as h, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react'
 
-const PLUGIN_ID = 'hermes-latex'
+const PLUGIN_ID = 'forx-latex'
 
 function cleanErrorMessage(err) {
   let msg = err?.message || String(err || '') || '操作未完成，请重试'
@@ -1958,7 +1958,7 @@ export default {
     ctx.registerMany([
       { id: 'route', area: ROUTES_AREA, data: { path: '/latex' }, render: () => h(LatexWorkbench, { ctx }) },
       { id: 'nav', area: SIDEBAR_NAV_AREA, data: { path: '/latex', label: 'LaTeX 工坊', codicon: 'file-code' } },
-      { id: 'open', area: PALETTE_AREA, data: { id: 'hermes-latex.open', label: '打开 LaTeX 论文工坊', keywords: ['latex', 'paper', 'tex', '论文'], run: () => host.navigate('/latex') } },
+      { id: 'open', area: PALETTE_AREA, data: { id: 'forx-latex.open', label: '打开 LaTeX 论文工坊', keywords: ['latex', 'paper', 'tex', '论文'], run: () => host.navigate('/latex') } },
     ])
   },
 }

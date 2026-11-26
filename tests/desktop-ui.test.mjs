@@ -1,5 +1,5 @@
 // With the desktop renderer built, run from the repo root with:
-// node --test hermes-latex/tests/desktop-ui.test.mjs
+// node --test forx-latex/tests/desktop-ui.test.mjs
 import assert from 'node:assert/strict'
 import { spawn } from 'node:child_process'
 import { randomUUID } from 'node:crypto'
@@ -15,7 +15,7 @@ import { chromium } from 'playwright'
 const repoRoot = resolve(import.meta.dirname, '../..')
 const desktop = join(repoRoot, 'apps', 'desktop')
 const browserOrigin = 'http://latex-ui.test'
-const apiRoot = '/api/plugins/hermes-latex'
+const apiRoot = '/api/plugins/forx-latex'
 const sessionToken = randomUUID()
 const tempRoot = realpathSync(tmpdir())
 const longFile = 'sections/supplementary-experiments-and-reproducibility-details-for-the-appendix.tex'
@@ -26,11 +26,11 @@ const pending = new Map()
 
 before(async () => {
   testHome = mkdtempSync(join(tempRoot, 'latex-ui-'))
-  cpSync(resolve(import.meta.dirname, '..'), join(testHome, 'plugins', 'hermes-latex'), {
+  cpSync(resolve(import.meta.dirname, '..'), join(testHome, 'plugins', 'forx-latex'), {
     recursive: true,
     filter: path => !['tests', '__pycache__'].includes(path.split(/[\\/]/).at(-1)),
   })
-  writeFileSync(join(testHome, 'config.yaml'), 'plugins:\n  enabled: [hermes-latex]\n')
+  writeFileSync(join(testHome, 'config.yaml'), 'plugins:\n  enabled: [forx-latex]\n')
 
   const credential = /(?:_KEY|_TOKEN|_SECRET|_PASSWORD|_CREDENTIALS)$/i
   const env = Object.fromEntries(Object.entries(process.env).filter(([key]) => !credential.test(key)))
@@ -90,7 +90,7 @@ before(async () => {
     stdin: {
       resolveDir: repoRoot,
       contents: `import { createRoot } from 'react-dom/client';
-        import plugin from './hermes-latex/desktop/plugin.js';
+        import plugin from './forx-latex/desktop/plugin.js';
         plugin.register({
           registerMany(items) {
             const route = items.find(item => item.area === 'routes' && item.data.path === '/latex');

@@ -109,7 +109,7 @@ def install_tectonic(*, timeout: float = 120.0) -> dict[str, Any]:
         return {"ok": True, "already_installed": True, "path": str(target)}
 
     release_url = "https://api.github.com/repos/tectonic-typesetting/tectonic/releases/latest"
-    headers = {"Accept": "application/vnd.github+json", "User-Agent": "hermes-latex/0.1"}
+    headers = {"Accept": "application/vnd.github+json", "User-Agent": "forx-latex/0.1"}
     resp = httpx.get(release_url, headers=headers, follow_redirects=True, timeout=20.0)
     resp.raise_for_status()
     data = resp.json()

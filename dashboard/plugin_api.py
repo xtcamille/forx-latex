@@ -1,4 +1,4 @@
-"""Authenticated FastAPI routes for hermes-latex; host middleware validates auth & profile scope."""
+"""Authenticated FastAPI routes for forx-latex; host middleware validates auth & profile scope."""
 from __future__ import annotations
 
 import base64
@@ -14,7 +14,7 @@ from fastapi.routing import APIRoute
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 _root = Path(__file__).resolve().parents[1]
-_pkg_name = "hermes_latex_" + hashlib.sha256(str(_root).encode()).hexdigest()[:16]
+_pkg_name = "forx_latex_" + hashlib.sha256(str(_root).encode()).hexdigest()[:16]
 if _pkg_name not in sys.modules:
     _spec = importlib.util.spec_from_file_location(
         _pkg_name,
@@ -54,8 +54,8 @@ class ScopedRoute(APIRoute):
                         cfg = load_config().get("plugins", {})
                         enabled = cfg.get("enabled", [])
                         disabled = cfg.get("disabled", [])
-                        if "hermes-latex" not in enabled or "hermes-latex" in disabled:
-                            raise HTTPException(403, "请在当前配置中启用 hermes-latex 插件")
+                        if "forx-latex" not in enabled or "forx-latex" in disabled:
+                            raise HTTPException(403, "请在当前配置中启用 forx-latex 插件")
                     except ImportError:
                         pass
                     return await handler(request)

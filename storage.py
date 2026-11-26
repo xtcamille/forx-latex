@@ -19,7 +19,7 @@ TEXT_EXTENSIONS = {
     ".json", ".yaml", ".yml", ".latexmkrc", ".cfg", ".def", ".clo",
 }
 BINARY_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".pdf", ".eps", ".svg"}
-IGNORED_DIRS = {".git", "__pycache__", ".hermes_latex_build", "build", "node_modules"}
+IGNORED_DIRS = {".git", "__pycache__", ".forx_latex_build", "build", "node_modules"}
 AUX_EXTENSIONS = {
     ".aux", ".log", ".bbl", ".blg", ".out", ".toc", ".lof", ".lot",
     ".fls", ".fdb_latexmk", ".synctex.gz", ".synctex", ".nav", ".snm",
@@ -43,11 +43,11 @@ def data_root() -> Path:
     """Resolve plugin data dir dynamically so profile switches take effect immediately."""
     try:
         from plugins.plugin_storage import plugin_data_dir
-        return plugin_data_dir("hermes-latex")
+        return plugin_data_dir("forx-latex")
     except Exception:
         import os
         home = Path(os.environ.get("HERMES_HOME") or (Path.home() / ".hermes"))
-        root = home / "plugin-data" / "hermes-latex"
+        root = home / "plugin-data" / "forx-latex"
         root.mkdir(parents=True, exist_ok=True)
         return root
 
@@ -112,7 +112,7 @@ class LatexStore:
             from hermes_cli.sqlite_util import open_db
             conn = open_db(
                 self.db_path,
-                db_label="hermes-latex",
+                db_label="forx-latex",
                 foreign_keys=True,
                 check_same_thread=False,
             )

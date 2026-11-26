@@ -1,4 +1,4 @@
-"""hermes-latex: Standalone AI-native LaTeX academic writing plugin for Hermes."""
+"""forx-latex: Standalone AI-native LaTeX academic writing plugin for Hermes."""
 from __future__ import annotations
 
 import asyncio
@@ -396,7 +396,7 @@ def _slash_handler(raw_args: str) -> str:
         projects = store.list_projects()
         eng = comp["active_engine"] or "未安装（可运行 `hermes latex setup` 一键安装 Tectonic）"
         return (
-            f"**LaTeX 论文工坊 (`hermes-latex`)**\n\n"
+            f"**LaTeX 论文工坊 (`forx-latex`)**\n\n"
             f"- 编译引擎状态: `{eng}`\n"
             f"- 已有项目数: `{len(projects)}` | 内置模板: `{len(list_templates())}` 个（IEEE / 顶会 / CCF区块链专委会期刊）\n"
             f"- 快捷命令: `/latex templates`, `/latex list`, `/latex setup`, `/latex check <project_id>`"
@@ -446,10 +446,10 @@ def register(ctx: Any) -> None:
     for name, schema, handler, desc in tools:
         ctx.register_tool(name=name, toolset="latex", schema=schema, handler=handler, description=desc)
 
-    skill_path = Path(__file__).parent / "skills" / "hermes-latex" / "SKILL.md"
+    skill_path = Path(__file__).parent / "skills" / "forx-latex" / "SKILL.md"
     if skill_path.exists():
         ctx.register_skill(
-            name="hermes-latex",
+            name="forx-latex",
             path=skill_path,
             description="End-to-end academic LaTeX workflow: templates, compilation, syntax-protected rewriting, BibTeX, and pre-flight audit.",
         )

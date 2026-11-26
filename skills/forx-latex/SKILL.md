@@ -1,5 +1,5 @@
 ---
-name: hermes-latex
+name: forx-latex
 description: 全流程 LaTeX 学术论文写作、模板初始化、语法保护改写、编译自愈与投稿体检技能。当用户需要写 LaTeX 论文、编译 PDF、润色/中译英/压页数、管理 BibTeX、制作三线表/TikZ 图或检查双盲/引用一致性时使用。
 ---
 

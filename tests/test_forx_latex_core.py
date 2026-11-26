@@ -1,4 +1,4 @@
-"""Core unit and integration tests for hermes-latex modules."""
+"""Core unit and integration tests for forx-latex modules."""
 from __future__ import annotations
 
 import asyncio
@@ -15,10 +15,10 @@ PLUGIN_ROOT = Path(__file__).resolve().parents[1]
 if str(PLUGIN_ROOT.parent) not in sys.path:
     sys.path.insert(0, str(PLUGIN_ROOT.parent))
 
-# Import via importlib package so relative imports inside hermes-latex resolve cleanly.
+# Import via importlib package so relative imports inside forx-latex resolve cleanly.
 import importlib.util
 
-_PKG = "hermes_latex_testpkg"
+_PKG = "forx_latex_testpkg"
 if _PKG not in sys.modules:
     _spec = importlib.util.spec_from_file_location(
         _PKG, PLUGIN_ROOT / "__init__.py", submodule_search_locations=[str(PLUGIN_ROOT)]
