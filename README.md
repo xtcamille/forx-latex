@@ -31,7 +31,7 @@ hermes plugins install hermes-latex
 将本仓库克隆到用户插件目录并启用（Windows ForX 默认目录为 `%LOCALAPPDATA%\forx\plugins\`，通用 Hermes 为 `~/.hermes/plugins/`）：
 
 ```powershell
-git clone https://github.com/CamilleZxt/hermes-latex "$env:LOCALAPPDATA\forx\plugins\hermes-latex"
+git clone https://github.com/xtcamille/hermes-latex "$env:LOCALAPPDATA\forx\plugins\hermes-latex"
 hermes plugins enable hermes-latex
 ```
 
