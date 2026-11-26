@@ -3,7 +3,7 @@ label: LaTeX 论文工坊 (LaTeX Studio)
 version: 0.1.0
 kind: standalone
 description: 全流程单人 AI LaTeX 论文创作插件：零本地TeX环境(Tectonic)编译、SyncTeX双向定位、IEEE/顶会/CCF区块链期刊模板、BibTeX管家、AST语法保护改写、投稿双盲与一致性体检。
-author: ForX
+author: CamilleZxt
 license: MIT
 tags: [latex, academic, papers, writing, desktop]
 provides_tools:
